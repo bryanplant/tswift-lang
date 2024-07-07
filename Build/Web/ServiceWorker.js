@@ -22,7 +22,7 @@ self.addEventListener('install', function (e) {
 self.addEventListener("activate", (event) => {
   console.log('[Service Worker] Activate')
 
-  event.waitUntil(async function () {
+  event.waitUntil((async function () {
     console.log(`[Service Worker] waitUntil.`);
     clients.claim();
     for (let name of (await caches.keys())) {
@@ -32,7 +32,7 @@ self.addEventListener("activate", (event) => {
         return caches.delete(cacheName);
       }
     }
-  });
+  })());
 });
 
 self.addEventListener('fetch', function (e) {
