@@ -29,7 +29,7 @@ self.addEventListener("activate", (event) => {
       console.log(`this is cache name wow: ${name}`)
       if (name != cacheName) {
         console.log(`[Service Worker] deleted cache: ${name}`)
-        return caches.delete(cacheName);
+        return caches.delete(name);
       }
     }
   })());
