@@ -23,9 +23,9 @@ jobs:
         git config --global user.email 'actions@github.com'
         git fetch origin gh-pages
         git checkout gh-pages
-        git rm -rf .
+        rm -rf *
         git checkout main -- Build/Web
-        mv Build/Web/* .
+        cp -r Build/Web/* .
         rm -rf Build
         git add .
         git commit -m 'Deploy to gh-pages'
