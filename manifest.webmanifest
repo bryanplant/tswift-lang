@@ -1,6 +1,6 @@
 {
-    "name": "OrbIncremental",
-    "short_name": "OrbIncremental",
+    "name": "tswift-lang",
+    "short_name": "tswift-lang",
     "start_url": "index.html",
     "display": "fullscreen",
     "background_color": "#231F20",

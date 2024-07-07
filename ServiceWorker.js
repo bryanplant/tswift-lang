@@ -1,4 +1,4 @@
-const cacheName = "DefaultCompany-OrbIncremental-0.1.0";
+const cacheName = "DefaultCompany-tswift-lang-0.1.0";
 const contentToCache = [
     "Build/Web.loader.js",
     "Build/Web.framework.js.unityweb",
