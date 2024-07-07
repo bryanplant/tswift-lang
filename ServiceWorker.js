@@ -1,4 +1,4 @@
-const cacheName = "DefaultCompany-tswift-lang-0.1.2";
+const cacheName = "DefaultCompany-tswift-lang-0.1.3";
 const contentToCache = [
   "Build/Web.loader.js",
   "Build/Web.framework.js.unityweb",
@@ -29,7 +29,7 @@ self.addEventListener("activate", (event) => {
       console.log(`this is cache name wow: ${name}`)
       if (name != cacheName) {
         console.log(`[Service Worker] deleted cache: ${name}`)
-        return caches.delete(name);
+        caches.delete(name);
       }
     }
   })());
