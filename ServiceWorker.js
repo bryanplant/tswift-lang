@@ -13,16 +13,23 @@ self.addEventListener('install', function (e) {
     self.skipWaiting();
     
     e.waitUntil((async function () {
-      caches.forEach((_, name) => {
-        if (!name == cacheName) {
-          console.log(`[Service Worker] deleted cache: ${name}`)
-          return caches.delete(cacheName);
-        }
-      });
       const cache = await caches.open(cacheName);
       console.log(`[Service Worker] Using cache: ${cacheName}`);
       await cache.addAll(contentToCache);
     })());
+});
+
+self.addEventListener("activate", (event) => {
+  console.log('[Service Worker] Activate')
+
+  event.waitUntil(
+    caches.forEach((_, name) => {
+      if (!name == cacheName) {
+        console.log(`[Service Worker] deleted cache: ${name}`)
+        return caches.delete(cacheName);
+      }
+    }),
+  );
 });
 
 self.addEventListener('fetch', function (e) {
