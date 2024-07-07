@@ -25,8 +25,9 @@ jobs:
         git checkout gh-pages
         rm -rf *
         git checkout main -- Build/Web
-        cp -r Build/Web/* .
-        rm -rf Build
+        mv Build Temp
+        cp -r Temp/Web/* .
+        rm -rf Temp
         git add .
         git commit -m 'Deploy to gh-pages'
         git push origin gh-pages --force
