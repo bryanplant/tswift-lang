@@ -1,0 +1,32 @@
+name: Deploy to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Deploy to gh-pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git config --global user.name 'Github Actions'
+        git config --global user.email 'actions@github.com'
+        git fetch origin gh-pages
+        git checkout gh-pages
+        git rm -rf .
+        git checkout main -- Build/Web
+        mv Build/Web/* .
+        rm -rf Build
+        git add .
+        git commit -m 'Deploy to gh-pages'
+        git push origin gh-pages --force
