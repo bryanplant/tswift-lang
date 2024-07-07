@@ -1,4 +1,4 @@
-const cacheName = "DefaultCompany-tswift-lang-0.1.3";
+const cacheName = "DefaultCompany-tswift-lang-0.1.4";
 const contentToCache = [
   "Build/Web.loader.js",
   "Build/Web.framework.js.unityweb",
