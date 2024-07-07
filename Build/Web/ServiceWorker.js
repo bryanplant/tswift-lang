@@ -28,6 +28,7 @@ self.addEventListener("activate", (event) => {
         console.log(`[Service Worker] deleted cache: ${name}`)
         return caches.delete(cacheName);
       }
+      clients.claim();
     }
   });
 });
