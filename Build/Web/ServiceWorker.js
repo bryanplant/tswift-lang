@@ -24,6 +24,7 @@ self.addEventListener("activate", (event) => {
 
   event.waitUntil(async function () {
     for (let name of (await caches.keys())) {
+      console.log(`this is cache name wow: ${name}`)
       if (!name == cacheName) {
         console.log(`[Service Worker] deleted cache: ${name}`)
         return caches.delete(cacheName);
