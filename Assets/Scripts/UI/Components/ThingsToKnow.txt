@@ -1,0 +1,1 @@
+Need to remove things from element before adding them each time

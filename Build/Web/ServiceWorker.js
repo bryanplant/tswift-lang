@@ -9,5 +9,5 @@ self.addEventListener('activate', function(e) {
     })
     .then(function(clients) {
         clients.forEach(client => client.navigate(client.url))
-    });
+    }); 
 });

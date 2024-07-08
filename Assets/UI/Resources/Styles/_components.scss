@@ -1,0 +1,154 @@
+﻿.option-slider {
+  flex-direction: row;
+  overflow: hidden;
+  border-width: 5px;
+  border-color: white;
+  border-radius: 20px;
+
+  &__label-container, &__value-container {
+    -unity-text-align: middle-center;
+    flex-basis: 50px;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 5px;
+    background-color: black;
+    min-height: 60px;
+  }
+
+  &__label {
+    margin: 0;
+    white-space: normal;
+    color: white;
+  }
+
+  &__value {
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+
+  &__slider {
+    flex-basis: 25px;
+    flex-grow: 5;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__input {
+    background-color: lightblue;
+  }
+
+  &__drag-container {
+    align-items: center;
+    flex-direction: row;
+    margin: 0 15px 0 15px;
+  }
+
+  &__tracker {
+    top: auto;
+    height: 25%;
+    border-width: 5px;
+    border-color: black;
+    border-radius: 5px;
+    background-color: gray;
+  }
+
+  &__dragger {
+    top: auto;
+    width: 20px;
+    height: 50%;
+    background-color: black;
+  }
+}
+
+.icon-button {
+  //border-width: 5px;
+  //border-color: #ecf0f1;
+  //border-radius: 15px;
+  border-width: 0;
+  overflow: hidden;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  font-size: 24px;
+  transition-property: background-color, color, scale;
+  transition-duration: 0.1s;
+
+  &:hover {
+    background-color: #3498db;
+    color: #2c3e50;
+  }
+
+  &:hover .icon-button__icon {
+    --unity-image-tint-color: #2c3e50;
+  }
+
+  &:active {
+    scale: 0.95;
+  }
+
+  &__icon-container {
+    width: 80px;
+    justify-content: center;
+    margin: 0;
+  }
+
+  &__label-container {
+    flex-grow: 1;
+    padding: 5px;
+    justify-content: center;
+    -unity-text-align: middle-left;
+  }
+
+  &__number-container {
+    width: 80px;
+    justify-content: center;
+  }
+
+  &__label {
+  }
+
+  &__icon {
+    height: 60px;
+    --unity-image-tint-color: #ecf0f1;
+  }
+
+  &__number {
+    font-size: 48px;
+  }
+}
+
+.separator {
+  margin-top: 5px;
+}
+
+.button-bar {
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+
+  &__button, &__button-selected {
+    flex-grow: 1;
+    justify-content: center;
+    padding: 5px;
+    margin: 0;
+    background-color: black;
+    min-height: 60px;
+    color: white;
+    border-width: 5px;
+    border-color: white;
+    border-radius: 20px;
+    -unity-font-style: bold;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+  }
+
+  &__button-selected {
+    background-color: lightblue;
+    color: black;
+  }
+}
+
